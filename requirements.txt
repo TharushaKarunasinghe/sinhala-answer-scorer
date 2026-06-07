@@ -1,0 +1,8 @@
+streamlit==1.45.1
+langchain==0.3.25
+langchain-community==0.3.24
+langchain-ollama==0.3.3
+chromadb==1.0.9
+sentence-transformers==4.1.0
+owlready2==0.47
+ollama==0.4.8
