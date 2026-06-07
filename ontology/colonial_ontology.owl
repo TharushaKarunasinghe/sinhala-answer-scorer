@@ -1,0 +1,498 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://colonial-sl.org/onto#"
+     xml:base="http://colonial-sl.org/onto"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <owl:Ontology rdf:about="http://colonial-sl.org/onto"/>
+
+    <!-- ═══════════════════════════════════════════
+         CLASSES
+    ═══════════════════════════════════════════ -->
+
+    <owl:Class rdf:about="#ColonialPower">
+        <rdfs:label xml:lang="si">යටත් විජිත ශක්තිය</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Era">
+        <rdfs:label xml:lang="si">යුගය</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Kingdom">
+        <rdfs:label xml:lang="si">රාජධානිය</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Battle">
+        <rdfs:label xml:lang="si">සටන</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Treaty">
+        <rdfs:label xml:lang="si">ගිවිසුම</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Person">
+        <rdfs:label xml:lang="si">පුද්ගලයා</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Reform">
+        <rdfs:label xml:lang="si">ප්‍රතිසංස්කරණය</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#EconomicSystem">
+        <rdfs:label xml:lang="si">ආර්ථික ක්‍රමය</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ReligiousPolicy">
+        <rdfs:label xml:lang="si">ආගමික ප්‍රතිපත්තිය</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LegalSystem">
+        <rdfs:label xml:lang="si">නීති ක්‍රමය</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Infrastructure">
+        <rdfs:label xml:lang="si">යටිතල පහසුකම</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#SocialGroup">
+        <rdfs:label xml:lang="si">සමාජ කණ්ඩායම</rdfs:label>
+    </owl:Class>
+
+    <!-- ═══════════════════════════════════════════
+         OBJECT PROPERTIES
+    ═══════════════════════════════════════════ -->
+
+    <owl:ObjectProperty rdf:about="#hasEra">
+        <rdfs:domain rdf:resource="#ColonialPower"/>
+        <rdfs:range rdf:resource="#Era"/>
+        <rdfs:label xml:lang="si">යුගය ඇත</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#foughtBattle">
+        <rdfs:domain rdf:resource="#Kingdom"/>
+        <rdfs:range rdf:resource="#Battle"/>
+        <rdfs:label xml:lang="si">සටන් කළේය</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#signedTreaty">
+        <rdfs:domain rdf:resource="#ColonialPower"/>
+        <rdfs:range rdf:resource="#Treaty"/>
+        <rdfs:label xml:lang="si">ගිවිසුම අත්සන් කළේය</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#ledBy">
+        <rdfs:domain rdf:resource="#Battle"/>
+        <rdfs:range rdf:resource="#Person"/>
+        <rdfs:label xml:lang="si">නායකත්වය දුන්නේය</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#introducedReform">
+        <rdfs:domain rdf:resource="#ColonialPower"/>
+        <rdfs:range rdf:resource="#Reform"/>
+        <rdfs:label xml:lang="si">ප්‍රතිසංස්කරණ හඳුන්වා දුන්නේය</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#introducedEconomicSystem">
+        <rdfs:domain rdf:resource="#ColonialPower"/>
+        <rdfs:range rdf:resource="#EconomicSystem"/>
+        <rdfs:label xml:lang="si">ආර්ථික ක්‍රමය හඳුන්වා දුන්නේය</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#imposedReligion">
+        <rdfs:domain rdf:resource="#ColonialPower"/>
+        <rdfs:range rdf:resource="#ReligiousPolicy"/>
+        <rdfs:label xml:lang="si">ආගම පැනවීය</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#introducedLaw">
+        <rdfs:domain rdf:resource="#ColonialPower"/>
+        <rdfs:range rdf:resource="#LegalSystem"/>
+        <rdfs:label xml:lang="si">නීතිය හඳුන්වා දුන්නේය</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#builtInfrastructure">
+        <rdfs:domain rdf:resource="#ColonialPower"/>
+        <rdfs:range rdf:resource="#Infrastructure"/>
+        <rdfs:label xml:lang="si">යටිතල පහසුකම් ඉදිකළේය</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#belongsToEra">
+        <rdfs:label xml:lang="si">යුගයට අයත් වේ</rdfs:label>
+    </owl:ObjectProperty>
+
+    <!-- ═══════════════════════════════════════════
+         DATA PROPERTIES
+    ═══════════════════════════════════════════ -->
+
+    <owl:DatatypeProperty rdf:about="#startYear">
+        <rdfs:range rdf:resource="xsd:integer"/>
+        <rdfs:label xml:lang="si">ආරම්භ වර්ෂය</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#endYear">
+        <rdfs:range rdf:resource="xsd:integer"/>
+        <rdfs:label xml:lang="si">අවසාන වර්ෂය</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- ═══════════════════════════════════════════
+         COLONIAL POWERS
+    ═══════════════════════════════════════════ -->
+
+    <owl:NamedIndividual rdf:about="#Portuguese">
+        <rdf:type rdf:resource="#ColonialPower"/>
+        <rdfs:label xml:lang="si">පෘතුගීසීන්</rdfs:label>
+        <hasEra rdf:resource="#PortugueseEra"/>
+        <startYear rdf:datatype="xsd:integer">1505</startYear>
+        <endYear rdf:datatype="xsd:integer">1658</endYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Dutch">
+        <rdf:type rdf:resource="#ColonialPower"/>
+        <rdfs:label xml:lang="si">ලන්දේසීන්</rdfs:label>
+        <hasEra rdf:resource="#DutchEra"/>
+        <startYear rdf:datatype="xsd:integer">1658</startYear>
+        <endYear rdf:datatype="xsd:integer">1796</endYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#British">
+        <rdf:type rdf:resource="#ColonialPower"/>
+        <rdfs:label xml:lang="si">බ්‍රිතාන්‍යයන්</rdfs:label>
+        <hasEra rdf:resource="#BritishEra"/>
+        <startYear rdf:datatype="xsd:integer">1796</startYear>
+        <endYear rdf:datatype="xsd:integer">1948</endYear>
+    </owl:NamedIndividual>
+
+    <!-- ═══════════════════════════════════════════
+         ERAS
+    ═══════════════════════════════════════════ -->
+
+    <owl:NamedIndividual rdf:about="#PortugueseEra">
+        <rdf:type rdf:resource="#Era"/>
+        <rdfs:label xml:lang="si">පෘතුගීසි යුගය (1505–1658)</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DutchEra">
+        <rdf:type rdf:resource="#Era"/>
+        <rdfs:label xml:lang="si">ලන්දේසි යුගය (1658–1796)</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#BritishEra">
+        <rdf:type rdf:resource="#Era"/>
+        <rdfs:label xml:lang="si">බ්‍රිතාන්‍ය යුගය (1796–1948)</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- ═══════════════════════════════════════════
+         KINGDOMS
+    ═══════════════════════════════════════════ -->
+
+    <owl:NamedIndividual rdf:about="#KotteKingdom">
+        <rdf:type rdf:resource="#Kingdom"/>
+        <rdfs:label xml:lang="si">කෝට්ටේ රාජධානිය</rdfs:label>
+        <belongsToEra rdf:resource="#PortugueseEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SitawakaKingdom">
+        <rdf:type rdf:resource="#Kingdom"/>
+        <rdfs:label xml:lang="si">සීතාවක රාජධානිය</rdfs:label>
+        <belongsToEra rdf:resource="#PortugueseEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#KandyanKingdom">
+        <rdf:type rdf:resource="#Kingdom"/>
+        <rdfs:label xml:lang="si">උඩරට රාජධානිය</rdfs:label>
+        <belongsToEra rdf:resource="#PortugueseEra"/>
+        <belongsToEra rdf:resource="#DutchEra"/>
+        <belongsToEra rdf:resource="#BritishEra"/>
+    </owl:NamedIndividual>
+
+    <!-- ═══════════════════════════════════════════
+         BATTLES
+    ═══════════════════════════════════════════ -->
+
+    <owl:NamedIndividual rdf:about="#BattleOfMulleriyawa">
+        <rdf:type rdf:resource="#Battle"/>
+        <rdfs:label xml:lang="si">මුල්ලේරියා සටන</rdfs:label>
+        <belongsToEra rdf:resource="#PortugueseEra"/>
+        <startYear rdf:datatype="xsd:integer">1562</startYear>
+        <ledBy rdf:resource="#Rajasinha1"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#BattleOfDanture">
+        <rdf:type rdf:resource="#Battle"/>
+        <rdfs:label xml:lang="si">දන්තුරේ සටන</rdfs:label>
+        <belongsToEra rdf:resource="#PortugueseEra"/>
+        <startYear rdf:datatype="xsd:integer">1594</startYear>
+        <ledBy rdf:resource="#Vimaladharmasuriya1"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#BattleOfRandeniwela">
+        <rdf:type rdf:resource="#Battle"/>
+        <rdfs:label xml:lang="si">රන්දෙනිවෙල සටන</rdfs:label>
+        <belongsToEra rdf:resource="#PortugueseEra"/>
+        <startYear rdf:datatype="xsd:integer">1630</startYear>
+        <ledBy rdf:resource="#Senarat"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#UvaWellassaRebellion">
+        <rdf:type rdf:resource="#Battle"/>
+        <rdfs:label xml:lang="si">ඌව-වෙල්ලස්ස කැරැල්ල</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+        <startYear rdf:datatype="xsd:integer">1818</startYear>
+        <ledBy rdf:resource="#Keppetipola"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MataleRebellion">
+        <rdf:type rdf:resource="#Battle"/>
+        <rdfs:label xml:lang="si">මාතලේ කැරැල්ල</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+        <startYear rdf:datatype="xsd:integer">1848</startYear>
+        <ledBy rdf:resource="#PuranAppu"/>
+    </owl:NamedIndividual>
+
+    <!-- ═══════════════════════════════════════════
+         TREATIES
+    ═══════════════════════════════════════════ -->
+
+    <owl:NamedIndividual rdf:about="#TreatyOfWesterwolt1638">
+        <rdf:type rdf:resource="#Treaty"/>
+        <rdfs:label xml:lang="si">වෙස්ටර්වෝල්ඩ් ගිවිසුම (1638)</rdfs:label>
+        <belongsToEra rdf:resource="#DutchEra"/>
+        <startYear rdf:datatype="xsd:integer">1638</startYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TreatyOfHanguranketa1766">
+        <rdf:type rdf:resource="#Treaty"/>
+        <rdfs:label xml:lang="si">හඟුරන්කෙත ගිවිසුම (1766)</rdfs:label>
+        <belongsToEra rdf:resource="#DutchEra"/>
+        <startYear rdf:datatype="xsd:integer">1766</startYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#KandyanConvention1815">
+        <rdf:type rdf:resource="#Treaty"/>
+        <rdfs:label xml:lang="si">උඩරට ගිවිසුම (1815)</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+        <startYear rdf:datatype="xsd:integer">1815</startYear>
+    </owl:NamedIndividual>
+
+    <!-- ═══════════════════════════════════════════
+         KEY PERSONS
+    ═══════════════════════════════════════════ -->
+
+    <owl:NamedIndividual rdf:about="#DharmapalaDonJohn">
+        <rdf:type rdf:resource="#Person"/>
+        <rdfs:label xml:lang="si">දොන් ජෝන් ධර්මපාල රජු</rdfs:label>
+        <belongsToEra rdf:resource="#PortugueseEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Rajasinha1">
+        <rdf:type rdf:resource="#Person"/>
+        <rdfs:label xml:lang="si">පළමුවන රාජසිංහ රජු</rdfs:label>
+        <belongsToEra rdf:resource="#PortugueseEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Vimaladharmasuriya1">
+        <rdf:type rdf:resource="#Person"/>
+        <rdfs:label xml:lang="si">පළමුවන විමලධර්මසූරිය රජු</rdfs:label>
+        <belongsToEra rdf:resource="#PortugueseEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Senarat">
+        <rdf:type rdf:resource="#Person"/>
+        <rdfs:label xml:lang="si">සෙනරත් රජු</rdfs:label>
+        <belongsToEra rdf:resource="#PortugueseEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Rajasinha2">
+        <rdf:type rdf:resource="#Person"/>
+        <rdfs:label xml:lang="si">II රාජසිංහ රජු</rdfs:label>
+        <belongsToEra rdf:resource="#DutchEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#KeertiSriRajasinha">
+        <rdf:type rdf:resource="#Person"/>
+        <rdfs:label xml:lang="si">කීර්ති ශ්‍රී රාජසිංහ රජු</rdfs:label>
+        <belongsToEra rdf:resource="#DutchEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Keppetipola">
+        <rdf:type rdf:resource="#Person"/>
+        <rdfs:label xml:lang="si">කැප්පෙටිපොල දිසාව</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#PuranAppu">
+        <rdf:type rdf:resource="#Person"/>
+        <rdfs:label xml:lang="si">වීර පුරන් අප්පු</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#JamesTaylor">
+        <rdf:type rdf:resource="#Person"/>
+        <rdfs:label xml:lang="si">ජේම්ස් ටේලර්</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DSSenanayake">
+        <rdf:type rdf:resource="#Person"/>
+        <rdfs:label xml:lang="si">ඩී. ඇස්. සේනානායක</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AnagarikaDharmapala">
+        <rdf:type rdf:resource="#Person"/>
+        <rdfs:label xml:lang="si">අනගාරික ධර්මපාල</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+    </owl:NamedIndividual>
+
+    <!-- ═══════════════════════════════════════════
+         REFORMS
+    ═══════════════════════════════════════════ -->
+
+    <owl:NamedIndividual rdf:about="#ColbrookeCameronReforms">
+        <rdf:type rdf:resource="#Reform"/>
+        <rdfs:label xml:lang="si">කෝල්බෲක්-කැමරන් ප්‍රතිසංස්කරණ</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+        <startYear rdf:datatype="xsd:integer">1833</startYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DonoughmorConstitution">
+        <rdf:type rdf:resource="#Reform"/>
+        <rdfs:label xml:lang="si">ඩොනමෝර් ව්‍යවස්ථාව</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+        <startYear rdf:datatype="xsd:integer">1931</startYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SoulburyConstitution">
+        <rdf:type rdf:resource="#Reform"/>
+        <rdfs:label xml:lang="si">සෝල්බරි ව්‍යවස්ථාව</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+        <startYear rdf:datatype="xsd:integer">1947</startYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TomboSystem">
+        <rdf:type rdf:resource="#Reform"/>
+        <rdfs:label xml:lang="si">තොම්බු ලේඛන ක්‍රමය</rdfs:label>
+        <belongsToEra rdf:resource="#DutchEra"/>
+    </owl:NamedIndividual>
+
+    <!-- ═══════════════════════════════════════════
+         ECONOMIC SYSTEMS
+    ═══════════════════════════════════════════ -->
+
+    <owl:NamedIndividual rdf:about="#SpiceMonopoly">
+        <rdf:type rdf:resource="#EconomicSystem"/>
+        <rdfs:label xml:lang="si">කුළුබඩු ඒකාධිකාරය</rdfs:label>
+        <belongsToEra rdf:resource="#PortugueseEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#VOCTradeSystem">
+        <rdf:type rdf:resource="#EconomicSystem"/>
+        <rdfs:label xml:lang="si">VOC වෙළඳ ක්‍රමය</rdfs:label>
+        <belongsToEra rdf:resource="#DutchEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#PlantationEconomy">
+        <rdf:type rdf:resource="#EconomicSystem"/>
+        <rdfs:label xml:lang="si">වතු ආර්ථිකය</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#CoffeePlantation">
+        <rdf:type rdf:resource="#EconomicSystem"/>
+        <rdfs:label xml:lang="si">කෝෆි වගාව</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TeaPlantation">
+        <rdf:type rdf:resource="#EconomicSystem"/>
+        <rdfs:label xml:lang="si">තේ වගාව</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#CrownLandsOrdinance">
+        <rdf:type rdf:resource="#EconomicSystem"/>
+        <rdfs:label xml:lang="si">මුඩුබිම් පනත (1840)</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+        <startYear rdf:datatype="xsd:integer">1840</startYear>
+    </owl:NamedIndividual>
+
+    <!-- ═══════════════════════════════════════════
+         RELIGIOUS POLICIES
+    ═══════════════════════════════════════════ -->
+
+    <owl:NamedIndividual rdf:about="#CatholicMissions">
+        <rdf:type rdf:resource="#ReligiousPolicy"/>
+        <rdfs:label xml:lang="si">කතෝලික මිෂනාරි ව්‍යාපාරය</rdfs:label>
+        <belongsToEra rdf:resource="#PortugueseEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ProtestantMissions">
+        <rdf:type rdf:resource="#ReligiousPolicy"/>
+        <rdfs:label xml:lang="si">ප්‍රොතෙස්තන්ත් ආගම් ප්‍රචාරය</rdfs:label>
+        <belongsToEra rdf:resource="#DutchEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#BuddhistRevival">
+        <rdf:type rdf:resource="#ReligiousPolicy"/>
+        <rdfs:label xml:lang="si">බෞද්ධ ආගමික පුනරුදය</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+    </owl:NamedIndividual>
+
+    <!-- ═══════════════════════════════════════════
+         LEGAL SYSTEMS
+    ═══════════════════════════════════════════ -->
+
+    <owl:NamedIndividual rdf:about="#RomanDutchLaw">
+        <rdf:type rdf:resource="#LegalSystem"/>
+        <rdfs:label xml:lang="si">රෝම-ලන්දේසි නීතිය</rdfs:label>
+        <belongsToEra rdf:resource="#DutchEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#BritishCommonLaw">
+        <rdf:type rdf:resource="#LegalSystem"/>
+        <rdfs:label xml:lang="si">බ්‍රිතාන්‍ය පොදු නීතිය</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+    </owl:NamedIndividual>
+
+    <!-- ═══════════════════════════════════════════
+         INFRASTRUCTURE
+    ═══════════════════════════════════════════ -->
+
+    <owl:NamedIndividual rdf:about="#GalleDutchFort">
+        <rdf:type rdf:resource="#Infrastructure"/>
+        <rdfs:label xml:lang="si">ගාල්ල ලන්දේසි බලකොටුව</rdfs:label>
+        <belongsToEra rdf:resource="#DutchEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#RailwaySystem">
+        <rdf:type rdf:resource="#Infrastructure"/>
+        <rdfs:label xml:lang="si">දුම්රිය මාර්ග පද්ධතිය</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+        <startYear rdf:datatype="xsd:integer">1864</startYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DutchCanal">
+        <rdf:type rdf:resource="#Infrastructure"/>
+        <rdfs:label xml:lang="si">ඕලන්ද ඇළ</rdfs:label>
+        <belongsToEra rdf:resource="#DutchEra"/>
+    </owl:NamedIndividual>
+
+    <!-- ═══════════════════════════════════════════
+         SOCIAL GROUPS
+    ═══════════════════════════════════════════ -->
+
+    <owl:NamedIndividual rdf:about="#BurgherCommunity">
+        <rdf:type rdf:resource="#SocialGroup"/>
+        <rdfs:label xml:lang="si">බර්ගර් ප්‍රජාව</rdfs:label>
+        <belongsToEra rdf:resource="#DutchEra"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#IndianTamilLabourers">
+        <rdf:type rdf:resource="#SocialGroup"/>
+        <rdfs:label xml:lang="si">ඉන්දියානු ද්‍රවිඩ ශ්‍රමිකයන්</rdfs:label>
+        <belongsToEra rdf:resource="#BritishEra"/>
+    </owl:NamedIndividual>
+
+</rdf:RDF>
