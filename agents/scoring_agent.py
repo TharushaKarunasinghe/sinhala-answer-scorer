@@ -22,38 +22,26 @@ class ScoringAgent:
         warning_text = ""
         if era_warnings:
             warning_text = (
-                "\nවැදගත්: පහත යුග දෝෂ හඳුනා ගන්නා ලදී — "
-                "මෙය ලකුණු අඩු කිරීමට හේතු විය යුතුය:\n"
-                + "\n".join(f"  - {w}" for w in era_warnings)
+                "\nයුග දෝෂ: "
+                + "; ".join(era_warnings)
             )
 
-        prompt = f"""ඔබ ශ්‍රී ලංකා යටත් විජිත ඉතිහාස පිළිතුරු ඇගයීමේ පද්ධතියකි.
-පහත ශිෂ්‍ය පිළිතුර ලකුණු නිර්ණායක අනුව ඇගයා JSON පමණක් ලියන්න.
+        prompt = f"""ශිෂ්‍ය පිළිතුර ඇගයන්න. JSON පමණක් ලියන්න.
 
-ප්‍රශ්නය:
-{question['question_text']}
+ප්‍රශ්නය: {question['question_text']}
 
-ලකුණු නිර්ණායක:
+නිර්ණායක:
 {criteria_lines}
 සම්පූර්ණ ලකුණු: {question['total_marks']}
 
-RAG සන්දර්භය:
-{retrieved_context[:800]}
-
-හඳුනාගත් ඔන්ටොලොජි සංකල්ප:
-{ontology_concepts}
+සන්දර්භය: {retrieved_context[:600]}
+සංකල්ප: {ontology_concepts}
 {warning_text}
 
-ශිෂ්‍ය පිළිතුර:
-{student_answer}
+ශිෂ්‍ය පිළිතුර: {student_answer}
 
-නීති:
-- සෑම නිර්ණායකයක් (C1-C5) සඳහාම ලකුණු දෙන්න
-- awarded <= max විය යුතුය
-- reason සිංහල භාෂාවෙන් ලියන්න
-- JSON පමණක් — වෙනත් පෙළ නොලියන්න
-
-{{"criteria_scores":[{{"id":"C1","awarded":0,"max":0,"reason":""}},{{"id":"C2","awarded":0,"max":0,"reason":""}},{{"id":"C3","awarded":0,"max":0,"reason":""}},{{"id":"C4","awarded":0,"max":0,"reason":""}},{{"id":"C5","awarded":0,"max":0,"reason":""}}],"total":0,"overall_comment":""}}"""
+JSON පමණක් (වෙනත් කිසිවක් නොලියන්න):
+{{"criteria_scores":[{{"id":"C1","awarded":0,"max":0,"reason":""}},{{"id":"C2","awarded":0,"max":0,"reason":""}},{{"id":"C3","awarded":0,"max":0,"reason":""}},{{"id":"C4","awarded":0,"max":0,"reason":""}},{{"id":"C5","awarded":0,"max":0,"reason":""}}],"total":0,"overall_comment":"","explanation":""}}"""
 
         result = generate_json(prompt)
 
@@ -66,7 +54,7 @@ RAG සන්දර්භය:
             cs["max"] = criteria_map.get(cs["id"], cs.get("max", 0))
             cs["awarded"] = max(0, min(int(cs.get("awarded", 0)), cs["max"]))
 
-        # Always recalculate total — never trust LLM arithmetic
+        # Always recalculate total
         result["total"] = sum(
             cs["awarded"] for cs in result.get("criteria_scores", [])
         )
@@ -86,4 +74,5 @@ RAG සන්දර්භය:
             ],
             "total": 0,
             "overall_comment": f"දෝෂය: {raw_response[:200]}",
+            "explanation": "ඇගයීම අසාර්ථක විය.",
         }
