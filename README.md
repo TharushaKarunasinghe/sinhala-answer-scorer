@@ -278,7 +278,7 @@ The OWL ontology (`colonial_ontology.owl`) covers 12 classes and 48 named indivi
 
 **Tharusha Karunasinghe**
 - GitHub: [@TharushaKarunasinghe](https://github.com/TharushaKarunasinghe)
-- LinkedIn: [linkedin.com/in/tharusha-kalhara](https://linkedin.com/in/tharusha-kalhara)
+- LinkedIn: [linkedin.com/in/tharusha-kalhara]([https://linkedin.com/in/tharusha-kalhara](https://www.linkedin.com/in/tharusha-kalhara-06a20324a/))
 
 ---
 
