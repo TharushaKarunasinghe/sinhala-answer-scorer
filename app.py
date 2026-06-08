@@ -84,8 +84,12 @@ if submit:
     if not student_answer.strip():
         st.warning("⚠️ කරුණාකර ඔබේ පිළිතුර ඇතුළත් කරන්න.")
     else:
-        with st.spinner("🤖 ඇගයීම සිදු කරමින් පවතී... (30-60 තත්පර)"):
-            result = orchestrator.run(selected_qid, student_answer)
+        try:
+            with st.spinner("🤖 ඇගයීම සිදු කරමින් පවතී... (30-60 තත්පර)"):
+                result = orchestrator.run(selected_qid, student_answer)
+        except Exception as e:
+            st.error(f"⏱️ ප්‍රතිචාරය ප්‍රමාද විය. කරුණාකර නැවත උත්සාහ කරන්න.\n\nදෝෂය: {e}")
+            st.stop()
 
         if "error" in result:
             st.error(result["error"])

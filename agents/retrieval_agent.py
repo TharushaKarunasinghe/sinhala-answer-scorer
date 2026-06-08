@@ -3,7 +3,7 @@ from langchain_chroma import Chroma
 
 CHROMA_DIR  = "chroma_db"
 EMBED_MODEL = "nomic-embed-text"
-TOP_K       = 4
+TOP_K       = 2
 
 
 class RetrievalAgent:
